@@ -6,8 +6,6 @@ import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor
 public class AuditLogModel {
     private Long id;
     private String userId;

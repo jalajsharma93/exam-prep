@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class UserAccountEntity {
 
     @Id
-    private String id;
+    private String user_id;
 
     private String name;
 

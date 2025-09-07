@@ -18,8 +18,7 @@ public class TagEntity {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String tag_id;
 
 
     private String name;

@@ -3,8 +3,6 @@ package com.nani.exam_backend.model;
 import lombok.*;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
 public class Question {
     private Long id;

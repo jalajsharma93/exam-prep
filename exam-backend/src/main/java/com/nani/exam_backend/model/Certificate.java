@@ -10,7 +10,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class Certificate {
-    private UUID id;
+    private String id;
     private String name;
     private String description;
     private boolean isActive;

@@ -18,8 +18,7 @@ public class DifficultyLevelEntity {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String difficulty_level_id;
 
 
     private String level;

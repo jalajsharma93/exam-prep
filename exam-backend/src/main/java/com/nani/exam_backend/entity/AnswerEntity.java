@@ -14,7 +14,7 @@ public class AnswerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long answer_submission_id;
 
     @ManyToOne
     @JoinColumn(name = "question_id", nullable = false)

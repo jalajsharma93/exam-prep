@@ -17,8 +17,7 @@ import java.util.UUID;
 public class CertificateEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String certificateId;
 
     private String name;
 
@@ -35,6 +34,9 @@ public class CertificateEntity {
 
     @Column(name = "created_at", updatable = false, insertable = false)
     private Timestamp createdAt;
+
+    @Column (name = "description", columnDefinition = "TEXT")
+    private String description;
 
     @Column(name = "updated_at", insertable = false)
     private Timestamp updatedAt;

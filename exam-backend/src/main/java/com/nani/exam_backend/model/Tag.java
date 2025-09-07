@@ -5,8 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor
 public class Tag {
     private Long id;
     private String name;

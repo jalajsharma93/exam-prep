@@ -20,8 +20,7 @@ public class ExamSessionEntity {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String exam_session_id;
 
 
     @Column(nullable = false)
@@ -29,7 +28,7 @@ public class ExamSessionEntity {
 
 
     @Column(nullable = false)
-    private Long certificateId;
+    private String certificateId;
 
 
     private LocalDateTime startedAt = LocalDateTime.now();

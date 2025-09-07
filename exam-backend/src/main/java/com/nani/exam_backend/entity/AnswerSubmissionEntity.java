@@ -15,12 +15,12 @@ import java.time.LocalDateTime;
 @Builder
 public class AnswerSubmissionEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "answer_submission_id", nullable = false, updatable = false)
+    private String answerSubmissionId;
 
 
     @Column(nullable = false)
-    private Long questionId;
+    private String questionId;
 
 
     @Column(nullable = false)

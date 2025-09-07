@@ -6,8 +6,6 @@ import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor
 public class Feedback {
     private Long id;
     private String userId;

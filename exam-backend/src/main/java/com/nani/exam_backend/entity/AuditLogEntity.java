@@ -20,8 +20,7 @@ public class AuditLogEntity {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String audit_log_id;
 
 
     private String userId;

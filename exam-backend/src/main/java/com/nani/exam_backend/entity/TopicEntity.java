@@ -1,7 +1,6 @@
 package com.nani.exam_backend.entity;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
 
@@ -10,8 +9,8 @@ import java.time.LocalDateTime;
 public class TopicEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "topic_id", nullable = false, updatable = false)
+    private String topicId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "certificate_id", nullable = false)

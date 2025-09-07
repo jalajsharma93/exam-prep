@@ -1,4 +1,4 @@
-package com.nani.examprep.model;
+package com.nani.exam_backend.model;
 
 import com.nani.exam_backend.enums.UserRole;
 import lombok.Data;

@@ -5,11 +5,9 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor
 public class MediaAttachment {
     private Long id;
-    private Long questionId;
+    private String questionId;
     private String mediaType;
     private String mediaUrl;
     private String description;

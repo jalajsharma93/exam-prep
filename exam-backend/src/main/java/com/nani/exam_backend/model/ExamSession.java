@@ -7,12 +7,10 @@ import lombok.RequiredArgsConstructor;
 import java.time.LocalDateTime;
 
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor
 public class ExamSession {
     private Long id;
     private String userId;
-    private Long certificateId;
+    private String certificateId;
     private Integer totalQuestions;
     private Integer correctAnswers;
     private Integer score;

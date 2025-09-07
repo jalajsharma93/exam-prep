@@ -6,9 +6,9 @@ import java.time.LocalDateTime;
 
 @Data
 public class AnswerSubmission {
-    private Long id;
+    private String id;
     private String userId;
-    private Long questionId;
+    private String questionId;
     private Long selectedOptionId;
     private String descriptiveAnswer;
     private Boolean isCorrect;

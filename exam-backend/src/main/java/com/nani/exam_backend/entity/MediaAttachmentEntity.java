@@ -20,11 +20,10 @@ public class MediaAttachmentEntity {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String media_attachment_id;
 
 
-    private Long questionId;
+    private String questionId;
     private String mediaType;
     private String url;
     private String description;
