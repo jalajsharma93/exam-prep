@@ -1,0 +1,125 @@
+
+#sql
+
+CREATE TABLE certificate (
+certificate_id VARCHAR PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+description TEXT,
+active BOOLEAN DEFAULT TRUE,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE topic (
+topic_id VARCHAR PRIMARY KEY,
+certificate_id VARCHAR NOT NULL,
+name VARCHAR(255) NOT NULL,
+description TEXT,
+active BOOLEAN DEFAULT TRUE,
+order_index INT DEFAULT 0,
+estimated_time INT DEFAULT 0,
+slug VARCHAR(255),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE question (
+question_id VARCHAR PRIMARY KEY,
+topic_id VARCHAR NOT NULL,
+type VARCHAR(20) NOT NULL,
+text TEXT NOT NULL,
+explanation TEXT,
+difficulty VARCHAR(50),
+marks INT DEFAULT 1,
+active BOOLEAN DEFAULT TRUE,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE option (
+option_id VARCHAR PRIMARY KEY,
+question_id VARCHAR NOT NULL,
+text TEXT NOT NULL,
+correct BOOLEAN DEFAULT FALSE,
+explanation TEXT,
+media_url TEXT,
+option_type VARCHAR(50),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE user_account (
+user_id VARCHAR PRIMARY KEY,
+email VARCHAR(255) UNIQUE NOT NULL,
+full_name VARCHAR(255),
+password_hash VARCHAR(255),
+role VARCHAR(50) NOT NULL,
+active BOOLEAN DEFAULT TRUE,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE answer_submission (
+submission_id VARCHAR PRIMARY KEY,
+user_id VARCHAR NOT NULL,
+question_id VARCHAR NOT NULL,
+selected_option_id VARCHAR,
+answer_text TEXT,
+correct BOOLEAN,
+marks_awarded INT,
+submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE exam_session (
+session_id VARCHAR PRIMARY KEY,
+user_id VARCHAR NOT NULL,
+certificate_id VARCHAR NOT NULL,
+started_at TIMESTAMP,
+ended_at TIMESTAMP,
+score INT,
+status VARCHAR(50)
+);
+
+CREATE TABLE feedback (
+feedback_id VARCHAR PRIMARY KEY,
+user_id VARCHAR NOT NULL,
+question_id VARCHAR NOT NULL,
+rating INT CHECK (rating BETWEEN 1 AND 5),
+comment TEXT,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE audit_log (
+audit_log_id VARCHAR PRIMARY KEY,
+user_id VARCHAR NOT NULL,
+action VARCHAR(255),
+details TEXT,
+timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE media_attachment (
+media_id VARCHAR PRIMARY KEY,
+question_id VARCHAR,
+url TEXT NOT NULL,
+media_type VARCHAR(50),
+uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tag (
+tag_id VARCHAR PRIMARY KEY,
+name VARCHAR(100) UNIQUE NOT NULL,
+description TEXT,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE question_tag (
+question_tag_id VARCHAR PRIMARY KEY,
+question_id VARCHAR NOT NULL,
+tag_id VARCHAR NOT NULL
+);
+
+CREATE TABLE difficulty_level (
+difficulty_level_id VARCHAR PRIMARY KEY,
+label VARCHAR(100) NOT NULL,
+description TEXT
+);
